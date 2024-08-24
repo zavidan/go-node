@@ -53,4 +53,12 @@ func TestNode(t *testing.T) {
 		t.Fatalf("expected '%s', got '%s'", "Error: hello", err.Error())
 	}
 
+	v = vm.Run(`async function afunc() {return "promised string"}; afunc()`)
+	if v.Error() != nil {
+		t.Fatal(v.Error())
+	}
+	if v.String() != "promised string" {
+		t.Fatalf("expected '%s', got '%s'", "promised string", v.String())
+	}
+
 }

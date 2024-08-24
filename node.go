@@ -320,7 +320,7 @@ const jsRuntime = `
 			}
 			let input = Buffer.alloc(0);
 			let output = Buffer.alloc(0);
-			socket.on("data", function(data) {
+			socket.on("data", async function(data) {
 				input = Buffer.concat([input, data]);
 				while (input.length > 0) {
 					let idx = input.indexOf(10);
@@ -334,9 +334,9 @@ const jsRuntime = `
 					}
 					let ret;
 					try {
-						ret = 'v'+eval.call(global, js);
+						ret = 'v' + await eval.call(global, js);
 					} catch (e) {
-						ret = 'e'+e;
+						ret = 'e' + e;
 					}
 					output = Buffer.concat([
 						output, 

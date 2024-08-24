@@ -1,13 +1,13 @@
 # go-node
 
-[![GoDoc](https://godoc.org/github.com/tidwall/go-node?status.svg)](https://godoc.org/github.com/tidwall/go-node)
+[![GoDoc](https://godoc.org/github.com/zavidan/go-node?status.svg)](https://godoc.org/github.com/zavidan/go-node)
 
 Run Javascript in Go using Node.js.
 
 ## Installing
 
 ```
-go get -u github.com/tidwall/go-node
+go get -u github.com/zavidan/go-node
 ```
 
 ## Examples
